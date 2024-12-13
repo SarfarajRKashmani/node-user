@@ -1,6 +1,6 @@
 const isLoggedInTrue = (req, res, next) => {
-    let { username, userId } = req.cookies;
-    if (username && userId) {
+    let { userId } = req.cookies;
+    if ( userId) {
       next();
     } else {
       res.redirect("/user/login");

@@ -8,7 +8,7 @@ const createUser = async (req, res) => {
       return res.send("users already Exists");
     } else {
       let user = await User.create(req.body);
-      return res.status(201).json(user);
+      return res.redirect("/");
     }
   } catch (error) {
     res.status(500).json({ error: error });
@@ -43,15 +43,13 @@ const login = async (req, res) => {
     return res.send("invalid password");
   }
 
-  res.cookie("username", isExists.username);
   res.cookie("userId", isExists.id);
-  return res.send("logged in");
+  // return res.send("logged in");
+  return res.redirect("/")
 };
-
 // pages
 const getLoginPage = (req, res) => {
-  res.render("login", {
-  });
+  res.render("login");
 };
 const getSignupPage = (req, res) => {
   res.render("signup");
