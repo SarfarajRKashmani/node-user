@@ -51,7 +51,6 @@ const login = async (req, res) => {
 // pages
 const getLoginPage = (req, res) => {
   res.render("login", {
-    title: "login page",
   });
 };
 const getSignupPage = (req, res) => {

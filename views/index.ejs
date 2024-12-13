@@ -1,54 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beautiful Website</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/public/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/style.css">
+     
 </head>
 <body>
-  <header>
-    <h1>Beautiful Website</h1>
-    <nav>
-      <a href="#" onclick="showPage('home')">Home</a>
-      <a href="#" onclick="showPage('login')">Login</a>
-      <a href="#" onclick="showPage('signup')">Signup</a>
-      <div class="user-info-nav">
-        <img src="https://via.placeholder.com/30" alt="User Icon" id="nav-user-icon">
-        <span id="nav-user-name">Guest</span>
-      </div>
-    </nav>
-  </header>
-
-  <div id="home" class="container">
-    <h2>Welcome to Our Beautiful Website</h2>
-    <p>Explore our amazing features and join our community.</p>
-    
-  </div>
-
-  <%- include("login") %>
-  <%- include("signup") %>
-
-  <script>
-    // function showPage(page) {
-    //   document.querySelectorAll('.container').forEach((section) => {
-    //     section.classList.add('hidden');
-    //   });
-    //   document.getElementById(page).classList.remove('hidden');
-    // }
-
-    // Example: Simulate a logged-in user
-    const user = {
-      name: "John Doe",
-      icon: "https://via.placeholder.com/50"
-    };
-
-    document.getElementById("user-name").textContent = `Logged in as: ${user.name}`;
-    document.getElementById("user-icon").src = user.icon;
-
-    document.getElementById("nav-user-name").textContent = user.name;
-    document.getElementById("nav-user-icon").src = user.icon;
-  </script>
+  <div class="navbar">
+    <h1>Welcome to the Home Page</h1>
+   <span>
+    <a href="/user/login">Login</a>
+    <a href="/user/signup">Sign Up</a>
+   </span>
+</div>
+    <div class="profile">
+        <h2>User Profile</h2>
+        <div id="user-profile">
+          <img src="https://via.placeholder.com/30" alt="User Icon" id="nav-user-icon">
+            <p><strong>Name:</strong><%= username %></p>
+            <p><strong>Email:</strong> sam.com</p>
+        </div>
+    </div>
 </body>
 </html>
+

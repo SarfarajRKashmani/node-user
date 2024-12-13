@@ -10,7 +10,6 @@ const {
 
 const userRouter = Router();
 
-// pages
 userRouter.get("/login", getLoginPage);
 userRouter.get("/signup", getSignupPage);
 userRouter.get("/", getUser);
